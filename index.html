@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Моя страница с таблицами и чекбоксами</title>
+  <style>
+  
+    /* Стиль для обертки таблицы */
+    .table-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+	
+    table {
+	  border-collapse: collapse;
+	}
+
+	/* Стиль для ячеек таблицы */
+	td {
+	  padding: 2px;
+	  border: 1px solid #ccc;
+	}
+
+	/* Стиль для активированного чекбокса */
+    .checked {
+      background-color: #6EDB8B;
+    }
+	
+	/* Стили для значения счетчика */
+    #counter {
+      font-size: 16px;
+    }
+
+    /* Стили для большего значения счетчика */
+    #counter.large {
+      font-size: 24px;
+    }
+
+    /* Стили для большего и красного значения счетчика */
+    #counter.large.red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="table-wrapper">
+  <table id="items">
+    <thead>
+      <tr>
+        <th>Воин (силен и смел)</th>
+        <th>Плут (ловок и хитер)</th>
+        <th>Волшебник (умен и опытен)</th>
+        <th>Жрец (добр и мудр)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Адамантиновая броня</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Неломающаяся отмычка</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Мантия левитации</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Амулет благословения</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Меч боли</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Плащ-невидимка</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Посох огня</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Святая вода</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Лук с прицелом</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Сапоги-скороходы</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Фамильяр</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Духи предков</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кольцо суперсилы</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Яд</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Жезл дождя</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Дымное кадило</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Клинок Вечной Славы</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Скрытый кинжал Теневого Раскола</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Книга Заклинаний Первого Уровня</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Священный Жезл Исцеления</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Щит Благословенной Стойкости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Невидимая нить Ловкости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Жезл Огненного Шара</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Ожерелье Божественного Света</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Перчатки Быстрого Реагирования</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кольцо Проникновения</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Амулет Магической Манипуляции</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Руны Благословения</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Меч Неукротимой Ярости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Сапоги Безшумного Шага</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Мантия Иллюзий</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кольцо Божественной Мудрости</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Доспехи Непробиваемой Стойкости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Клыки Ядовитой Чешуи</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кольцо Волшебного Потока</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Жезл Пророчества</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кольцо Бесконечной Выносливости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Плащ Иллюзии</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Руна Могущества</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Амулет Покровительства</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Боевой Топор Великого Воителья</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Кинжал-Отравитель</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Посох Замораживания</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Чаша Вечной Жизни</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Копье Верного Расправы</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Лук Скрытых Взглядов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Подвеска Чародейской Энергии</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Посох Священного Огня</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Щит Покорителя Демонов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Браслеты Разбойника</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Гримуар Запретных Заклинаний</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Мантия Божественной Защиты</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Шлем Безупречной Доблести</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Пояс Подземельного Проникновения</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Сфера Пространственного Перемещения</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> Реликвия Потустороннего Призыва</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="table-wrapper">Количество пройденных локаций: <span id="counter">0</span> <button onclick="uncheckAll()">Сбросить прогресс</button></p> 
+
+<div class="table-wrapper">
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Локация х1</th>
+        <th>Локация х2</th>
+        <th>Локация х3</th>
+        <th>Локация х4</th>
+        <th>Локация х5</th>
+        <th>Локация х6</th>
+        <th>Локация х7</th>
+        <th>Локация х8</th>
+        <th>Локация х9</th>
+        <th>Локация х0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 01. Логово гоблинов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 02. Тайник разбойников</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 03. Храм культистов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 04. Подземное озеро</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 05. Склеп</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 06. Обитель бехолдера</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 07. Город иллитидов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 08. Болото жаболюдов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 09. Паучьи сети</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 10. Поселение дроу</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 11. Магическая головоломка</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 12. Грибная пещера</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 13. Широкая расщелина</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 14. Убежище злого волшебника</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 15. Сокровищница дракона</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 16. Арена кобольдов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 17. Кузня дуэргаров</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 18. Лабиринт</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 19. Заброшенная шахта</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 20. Хижина ведьмы</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 21. Изумрудный фонтан</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 22. Чертоги теневых ведьм</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 23. Безмолвные руины</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 24. Зазеркалье</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 25. Хижина забытого колдуна</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 26. Каменный лабиринт</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 27. Озеро песчаных змей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 28. Чарующая долина</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 29. Подземный ручей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 30. Грибной грот</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 31. Темный перекресток</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 32. Затерянный город-крепость</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 33. Переплетенные деревья</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 34. Башня чародейки</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 35. Королевская надгробная пещера</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 36. Лазурный храм</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 37. Древний остров-полуночник</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 38. Пещера хищных зверей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 39. Магический замок</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 40. Заброшенный город механизмов</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 41. Стальные каньоны</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 42. Потайные песчаные пещеры</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 43. Водопад забытых мелодий</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 44. Подводная гробница</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 45. Хижина вора</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 46. Бушующая горная река</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 47. Затерянный храм мудрости</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 48. Темный фолклорный лес</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 49. Осколки звезды</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 50. Грозовой форт</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 51. Таинственная шахта</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 52. Храм из костей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 53. Полярное ущелье</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 54. Забытый маяк</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 55. Хижина заблудшего мага</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 56. Лунный светильник</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 57. Дикий каньон</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 58. Домик циркача</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 59. Запретная роща</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 60. Черепашья крепость</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 61. Огненные скалы</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 62. Поле боя</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 63. Магический фонтан</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 64. Ледяная пещера сокровищ</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 65. Забытый храм зверей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 66. Пещера падших ангелов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 67. Чародейский карнавал</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 68. Озеро мертвых душ</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 69. Пещера гигантских кристаллов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 70. Отравленный лес</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 71. Забытая катакомба</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 72. Хижина чудес</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 73. Город-призрак в пустыне</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 74. Затерянный алхимический лабораторный комплекс</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 75. Руины древних цивилизаций</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 76. Магическое дерево-портал</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 77. Гробница</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 78. Заброшенная таверна</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 79. Каменный мост над обрывом</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 80. Гробница забытых королей</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 81. Храм теней</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 82. Живой лабиринт</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 83. Бездонная пропасть</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 84. Потайная библиотека</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 85. Кладбище кораблей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 86. Логово ликантропов</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 87. Перекресток миров</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 88. Остров феерических тварей</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 89. Древний обелиск</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 90. Забытый водопад</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 91. Пустынное кладбище</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 92. Галерея живых картин</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 93. Окаменелый лес</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 94. Затерянный оазис</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 95. Башня магических испытаний</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 96. Пещера вечной мерзлоты</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 97. Запретный остров</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 98. Чарующий сад</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 99. Гранитная пустошь</td>
+        <td><input type="checkbox" onclick="toggleCellColor(this)"> 100. Тюрьма тысячелетия</td>
+      </tr>
+	  
+  
+	  
+    </tbody>
+  </table>
+ </div>
+ 
+ <script>
+	function toggleCellColor(checkbox) {
+	  var cell = checkbox.parentNode;
+	  if (checkbox.checked) {
+		cell.classList.add("checked");
+	  } else {
+		cell.classList.remove("checked");
+	  }
+	  updateCounter();
+	}
+	
+	function updateCounter() {
+	  var table = document.getElementById("myTable");
+	  var checkboxes = table.getElementsByTagName("input");
+	  var count = 0;
+
+
+	  for (var i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {
+		  count++;
+		}
+	  }
+
+	  document.getElementById("counter").textContent = count;
+	  
+	  // Добавляем классы стилей в зависимости от значения счетчика
+	  if (count >= 16) {
+		document.getElementById("counter").classList.add("large", "red");
+	  } else {
+		document.getElementById("counter").classList.remove("large", "red");
+	  }
+	}
+	
+    function uncheckAll() {
+      var tables = document.getElementsByTagName("table");
+      var checkboxes = [];
+
+      for (var i = 0; i < tables.length; i++) {
+        var tableCheckboxes = tables[i].getElementsByTagName("input");
+
+        for (var j = 0; j < tableCheckboxes.length; j++) {
+          if (tableCheckboxes[j].type === "checkbox") {
+            checkboxes.push(tableCheckboxes[j]);
+          }
+        }
+      }
+
+      for (var k = 0; k < checkboxes.length; k++) {
+        checkboxes[k].checked = false;
+      }
+	  
+	  location.reload(); // Обновление страницы
+    }
+
+  </script>
+</body>
+</html>
